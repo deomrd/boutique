@@ -1,0 +1,203 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.facture-container {
+    width: 70%;
+    margin: auto;
+    background: #fff; /* Fond blanc explicite */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour l'impression */
+@media print {
+    body {
+        background-color: #fff; /* Fond blanc pour l'impression */
+    }
+
+    .facture-container {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+        border: none;
+    }
+
+    .btn-group, .btn {
+        display: none; /* Masquer les boutons lors de l'impression */
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    color: #4e4376;
+    margin: 0;
+}
+
+.modal-header .close {
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-header .close:hover {
+    color: #4e4376;
+}
+
+.modal-body {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-footer button.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-footer button.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+.modal-footer button#modalConfirmBtn {
+    background-color: #4e4376;
+    color: white;
+}
+
+.modal-footer button#modalConfirmBtn:hover {
+    background-color: #3f355b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Styles pour le tableau */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #4e4376; /* Couleur de fond de l'en-tête */
+    color: white; /* Couleur du texte de l'en-tête */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.table td {
+    background-color: #f9f9f9; /* Couleur de fond des cellules */
+    color: #555; /* Couleur du texte des cellules */
+}
+
+.table tr:nth-child(even) td {
+    background-color: #f2f2f2; /* Couleur de fond alternée pour les lignes paires */
+}
+
+.table tr:hover td {
+    background-color: #e0e0e0; /* Couleur de fond au survol */
+    transition: background-color 0.3s ease;
+}
+
+.table tfoot th {
+    background-color: #4e4376; /* Couleur de fond du pied de tableau */
+    color: white; /* Couleur du texte du pied de tableau */
+    font-weight: bold;
+}
+
+/* Styles pour l'impression */
+@media print {
+    .table {
+        box-shadow: none;
+    }
+
+    .table th, .table td {
+        border: 1px solid #000; /* Bordures noires pour l'impression */
+    }
+
+    .table th {
+        background-color: #fff; /* Fond blanc pour l'en-tête lors de l'impression */
+        color: #000; /* Texte noir pour l'en-tête lors de l'impression */
+    }
+
+    .table td {
+        background-color: #fff; /* Fond blanc pour les cellules lors de l'impression */
+        color: #000; /* Texte noir pour les cellules lors de l'impression */
+    }
+
+    .table tr:nth-child(even) td {
+        background-color: #f9f9f9; /* Fond alterné pour les lignes paires lors de l'impression */
+    }
+}
